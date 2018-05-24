@@ -1,0 +1,11 @@
+pipeline {
+    stage('Stage 1') {
+	node ('master') {
+	checkout scm
+            steps {
+                git 'https://github.com/couchbaselabs/restful-angularjs-java'
+                bat 'mvn clean install'
+				}
+            }
+        }
+    }
